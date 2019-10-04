@@ -2,7 +2,8 @@
 
 This repository contains example notebooks demonstrating the [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning-service/) Python SDK which allows you to build, train, deploy and manage machine learning solutions using Azure.  The AML SDK allows you the choice of using local or cloud compute resources, while managing and maintaining the complete data science workflow from the cloud.
 
-![Azure ML workflow](https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/machine-learning/service/media/overview-what-is-azure-ml/aml.png)
+![Azure ML Workflow](https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/machine-learning/service/media/concept-azure-machine-learning-architecture/workflow.png)
+
 
 ## Quick installation
 ```sh
@@ -11,7 +12,7 @@ pip install azureml-sdk
 Read more detailed instructions on [how to set up your environment](./NBSETUP.md) using Azure Notebook service, your own Jupyter notebook server, or Docker.
 
 ## How to navigate and use the example notebooks?
-You should always run the [Configuration](./configuration.ipynb) notebook first when setting up a notebook library on a new machine or in a new environment. It configures your notebook library to connect to an Azure Machine Learning workspace, and sets up your workspace and compute to be used by many of the other examples. 
+If you are using an Azure Machine Learning Notebook VM, you are all set. Otherwise, you should always run the [Configuration](./configuration.ipynb) notebook first when setting up a notebook library on a new machine or in a new environment. It configures your notebook library to connect to an Azure Machine Learning workspace, and sets up your workspace and compute to be used by many of the other examples. 
 
 If you want to...
 
@@ -20,7 +21,7 @@ If you want to...
  * ...learn about experimentation and tracking run history, first [train within Notebook](./how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb), then try [training on remote VM](./how-to-use-azureml/training/train-on-remote-vm/train-on-remote-vm.ipynb) and [using logging APIs](./how-to-use-azureml/training/logging-api/logging-api.ipynb).
  * ...train deep learning models at scale, first learn about [Machine Learning Compute](./how-to-use-azureml/training/train-on-amlcompute/train-on-amlcompute.ipynb), and then try [distributed hyperparameter tuning](./how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch/train-hyperparameter-tune-deploy-with-pytorch.ipynb) and [distributed training](./how-to-use-azureml/training-with-deep-learning/distributed-pytorch-with-horovod/distributed-pytorch-with-horovod.ipynb).
  * ...deploy models as a realtime scoring service, first learn the basics by [training within Notebook and deploying to Azure Container Instance](./how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb), then learn how to [register and manage models, and create Docker images](./how-to-use-azureml/deployment/register-model-create-image-deploy-service/register-model-create-image-deploy-service.ipynb), and [production deploy models on Azure Kubernetes Cluster](./how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks.ipynb).
- * ...deploy models as a batch scoring service, first [train a model within Notebook](./how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb), learn how to [register and manage models](./how-to-use-azureml/deployment/register-model-create-image-deploy-service/register-model-create-image-deploy-service.ipynb), then [create Machine Learning Compute for scoring compute](./how-to-use-azureml/training/train-on-amlcompute/train-on-amlcompute.ipynb), and [use Machine Learning Pipelines to deploy your model](./how-to-use-azureml/machine-learning-pipelines/pipeline-mpi-batch-prediction.ipynb).
+ * ...deploy models as a batch scoring service, first [train a model within Notebook](./how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb), learn how to [register and manage models](./how-to-use-azureml/deployment/register-model-create-image-deploy-service/register-model-create-image-deploy-service.ipynb), then [create Machine Learning Compute for scoring compute](./how-to-use-azureml/training/train-on-amlcompute/train-on-amlcompute.ipynb), and [use Machine Learning Pipelines to deploy your model](https://aka.ms/pl-batch-scoring).
  * ...monitor your deployed models, learn about using [App Insights](./how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) and [model data collection](./how-to-use-azureml/deployment/enable-data-collection-for-models-in-aks/enable-data-collection-for-models-in-aks.ipynb).
 
 ## Tutorials
@@ -38,6 +39,7 @@ The [How to use Azure ML](./how-to-use-azureml) folder contains specific example
 - [Machine Learning Pipelines](./how-to-use-azureml/machine-learning-pipelines) - Examples showing how to create and use reusable pipelines for training and batch scoring
 - [Deployment](./how-to-use-azureml/deployment) - Examples showing how to deploy and manage machine learning models and solutions
 - [Azure Databricks](./how-to-use-azureml/azure-databricks) - Examples showing how to use Azure ML with Azure Databricks
+- [Monitor Models](./how-to-use-azureml/monitor-models) - Examples showing how to enable model monitoring services such as DataDrift
 
 ---
 ## Documentation
@@ -48,9 +50,27 @@ The [How to use Azure ML](./how-to-use-azureml) folder contains specific example
 
 ---
 
+
+## Community Repository 
+Visit this [community repository](https://github.com/microsoft/MLOps/tree/master/examples) to find useful end-to-end sample notebooks. Also, please follow these [contribution guidelines](https://github.com/microsoft/MLOps/blob/master/contributing.md) when contributing to this repository.   
+
 ## Projects using Azure Machine Learning
 
 Visit following repos to see projects contributed by Azure ML users:
-
- - [Fine tune natural language processing models using Azure Machine Learning service](https://github.com/Microsoft/AzureML-BERT)
+ - [AMLSamples](https://github.com/Azure/AMLSamples) Number of end-to-end examples, including face recognition, predictive maintenance, customer churn and sentiment analysis.
+ - [Learn about Natural Language Processing best practices using Azure Machine Learning service](https://github.com/microsoft/nlp)
+ - [Pre-Train BERT models using Azure Machine Learning service](https://github.com/Microsoft/AzureML-BERT)
  - [Fashion MNIST with Azure ML SDK](https://github.com/amynic/azureml-sdk-fashion)
+ - [UMass Amherst Student Samples](https://github.com/katiehouse3/microsoft-azure-ml-notebooks) - A number of end-to-end machine learning notebooks, including machine translation, image classification, and customer churn, created by students in the 696DS course at UMass Amherst.
+ 
+## Data/Telemetry 
+This repository collects usage data and sends it to Mircosoft to help improve our products and services. Read Microsoft's [privacy statement to learn more](https://privacy.microsoft.com/en-US/privacystatement)
+
+To opt out of tracking, please go to the raw markdown or .ipynb files and remove the following line of code:
+
+```sh
+    "![Impressions](https://PixelServer20190423114238.azurewebsites.net/api/impressions/MachineLearningNotebooks/how-to-use-azureml/README.png)"
+```
+This URL will be slightly different depending on the file. 
+
+ ![Impressions](https://PixelServer20190423114238.azurewebsites.net/api/impressions/MachineLearningNotebooks/README.png)
